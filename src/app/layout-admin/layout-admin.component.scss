@@ -1,0 +1,17 @@
+header {
+  color: white;
+  background-color: black;
+  height: 50px;
+  li {
+    float: left;
+    list-style: none;
+    margin-top: 10px;
+
+    a {
+      padding: 20px;
+    }
+    a:hover {
+      color: aquamarine;
+    }
+  }
+}

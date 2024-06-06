@@ -1,0 +1,77 @@
+<form (ngSubmit)="handleSubmit()" [formGroup]="productForm">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="title"
+      id="title"
+      formControlName="title"
+    />
+    <div
+      class="text-danger"
+      *ngIf="
+        !productForm.get('title')?.valid && productForm.get('title')?.touched
+      "
+    >
+      Bạn chưa nhập tên
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      class="form-control"
+      type="number"
+      placeholder="price"
+      id="price"
+      formControlName="price"
+    />
+    <div
+      class="text-danger"
+      *ngIf="
+        !productForm.get('price')?.valid && productForm.get('price')?.touched
+      "
+    >
+      Giá phải lớn hơn 0
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="thumbnail">Thumbnail</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="thumbnail"
+      id="thumbnail"
+      formControlName="thumbnail"
+    />
+    <div
+      class="text-danger"
+      *ngIf="
+        !productForm.get('thumbnail')?.valid &&
+        productForm.get('thumbnail')?.touched
+      "
+    >
+      Bạn chưa nhập ảnh
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="description"
+      id="description"
+      formControlName="description"
+    />
+    <div
+      class="text-danger"
+      *ngIf="
+        !productForm.get('description')?.valid &&
+        productForm.get('description')?.touched
+      "
+    >
+      Bạn chưa nhập mô tả
+    </div>
+  </div>
+  <button class="btn btn-primary w-100">Submit</button>
+</form>
